@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About us</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/s.css'%}">
+    <link rel="stylesheet" href="{% static 'css/media.css'%}">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+</head>
+<body>
+<!--{% load static %}-->
+<!-- Dropdown Structure -->
+<ul id="dropdown1" class="dropdown-content">
+
+
+    {% for cat in cats %}
+
+    <li><a href="/category/{{cat.url}}">{{cat.title}}</a></li>
+
+    {% endfor %}
+
+</ul>
+<nav class="bg-primary" style="background: #477091!important;">
+    <div class="container">
+        <div class="nav-wrapper">
+            <a href="/home" class="brand-logo">IBLOGS</a>
+            <ul class="right hide-on-med-and-down">
+                <li><a href="/about">ABOUT</a></li>
+                <li><a href="/Logout/">LOGOUT</a></li>
+                <!-- Dropdown Trigger -->
+                <li><a class="dropdown-trigger" href="#!" data-target="dropdown1">CATEGORY<i
+                        class="material-icons right">arrow_drop_down</i></a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+    <section id="banner" style="background: url('/media/img/header.png') bottom center no-repeat;">
+        <div class="mid-banner">
+            <h2>ABOUT US</h2>
+            <p>Welcome to our content-rich web platform, a user-friendly environment where users can access an array of posts categorized for easy exploration. With a secure user login system, individuals can enjoy curated content, while administrators have the power to effortlessly manage post categories and content. Explore, engage, and experience the world of information and ideas  like never before.
+                This project is a web-based content management system that allows users to explore posts organized into various categories. Users can securely log in, access posts, and engage with the content. An administrative interface empowers admins to manage categories and posts seamlessly,ensuring dynamic and organized content presentation.
+                </p>
+        </div>
+    </section>
+
+    <div class="about-section">
+        <div class="background-overlay"></div>
+        <div class="profile">
+            <figure>
+                <img src="/media/img/WhatsApp Image 2023-09-13 at 10.52.11.jpg">
+            </figure>
+        </div>
+   <div class="about-me">
+    <p><b>About Me</b><br><br><strong>Hi, I am Saurabh Bissa,<br></strong>A Dedicated and proactive software engineer with a strong passion for coding and a relentless desire to learn and innovate.An aspiring Python programmer with a proven track record of transforming ideas into practical solutions. My journey in the world of programming has been guided by a commitment to excellence,<br> and I am eager to contribute my skills and knowledge to a dynamic team that values creativity and technical proficiency.
+        With a Master of Computer Application (MCA) from Presidency College and a Bachelor of Computer Application (BCA) from Lachoo Memorial College of Science and Technology, I have honed a solid foundation in computer science principles. My academic achievements, complemented by hands-on experience and numerous projects, have equipped me with a diverse skill set that extends beyond mere programming languages.
+         </p>
+         <div class="icons">
+            <h4>You Can Connect Me Through</h4>
+         <a href="#" class="fa fa-facebook"></a>
+         <a href="#" class="fa fa-linkedin"></a>
+         </div> 
+   </div>
+
+
+</body>
+</html>

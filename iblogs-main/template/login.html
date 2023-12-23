@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LOGIN</title>
+    {% load static %}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{% static 'css/s1.css'%}">
+    <link rel="stylesheet" href="{% static 'css/media.css'%}">
+</head>
+<body>
+
+    <div class="container">
+
+
+        <div class="overlay">
+        </div>
+        <div class="overlay2">
+        </div>
+        <form action="/Login/" method="post">
+            {% csrf_token %}
+            <h2>Login to IBlogs</h2>
+                {% if messages %}
+                    {% for message in messages %}
+                        {% if message == 'Wrong Login Credentials...'%}
+                             <div class="messages">
+                                <div class="card-panel teal lighten-2">Wrong Credentials</div>
+        <!--                    <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>-->
+                             </div>
+                        {% endif %}
+                    {% endfor %}
+                {% endif %}
+            <br/>
+            <label for="username">Username</label>
+            <input type="text" name="username" id="username">
+            <br/>
+            <label for="password">Password</label>
+            <input type="password" name="password" id="password">
+            <br/>
+            <div class="remember">
+<!--                <div class="check">-->
+<!--                    <a href="/admin"><button type="button">ADMIN</button></a>-->
+<!--&lt;!&ndash;                    <a href="/admin">Admin</a>&ndash;&gt;-->
+<!--                </div>-->
+                <button type="submit">Login</button>
+            </div>
+            <div class="icons btn">
+            <h4>Not Registered?
+              <a href='/register'>Click Here</a>
+                <!--                <a href="/register" class="btn">Register</a>-->
+            </h4></div>
+        </form>
+    </div>
+</body>
+</html>
